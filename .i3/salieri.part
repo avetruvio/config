@@ -1,0 +1,7 @@
+###
+# salieri's Config
+###
+
+
+bindsym XF86TaskPane exec --no-startup-id onboard
+bindsym XF86RotateWindows --release exec --no-startup-id ~/.scripts/rotate-screen.sh

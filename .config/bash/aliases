@@ -1,0 +1,32 @@
+#!/bin/bash
+
+## Heh...
+alias fucking='sudo'
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME '
+
+## ls as we cd
+function cd {
+	builtin cd "$@" && ls -F
+}
+
+## Alias for game, TINT, TINT is not Tetris
+alias tint="tint -l 1 -n"
+
+## Easier opening of files from terminal
+alias open="xdg-open"
+
+## Common places to cd to: 
+alias code="cd ~/Documents/Projects/Code"
+alias dl="cd ~/Downloads/"
+alias docs="cd ~/Documents"
+
+## Keep dotfiles when switching users
+alias su="sudo -E su -p"
+
+## TTY Clock, Timer
+alias clock="tty-clock"
+alias timer="tty-countdown"
+
+## Change background using library in ~/Pictures
+alias chbg="feh --bg-scale --no-xinerama `find Pictures/backgrounds/ -type f | shuf -n 1 --random-source=/dev/random `"

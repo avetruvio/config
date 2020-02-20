@@ -1,0 +1,26 @@
+URxvt.font: xft:hack:size=12,xft:monospace:size=12,xft:noto:size=11,xft:FontAwesome:size=14,sft:siji:size=12
+URxvt.scrollBar: false
+URxvt.transparent:   true
+URxvt.shading:	20
+
+URxvt*background: #1c2021
+URxvt*foreground: #f4f5f7
+URxvt*color0: #757c84
+URxvt*color1: #c7ad94
+URxvt*color2: #95c7ae
+URxvt*color3: #adc995
+URxvt*color4: #b095c8
+URxvt*color5: #c795ae
+URxvt*color6: #94aec7
+URxvt*color7: #c7ccd2
+URxvt*color8: #757c84
+URxvt*color9: #c7ad94
+URxvt*color10: #95c7ae
+URxvt*color11: #adc995
+URxvt*color12: #b095c8
+URxvt*color13: #c795ae
+URxvt*color14: #94aec7
+URxvt*color15: #c7ccd2
+
+! Dissable printing the terminal contents when pressing PrintScreen
+URxvt.print.pipe: "cat > /dev/null"

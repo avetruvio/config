@@ -1,0 +1,76 @@
+## Start Kurisu Configuration
+
+## Setup workspaces for use in a multi-monitor configuration
+
+# Define Monitors
+set $left-monitor "DP-3"
+set $center-monitor "DP-5"
+set $right-monitor "DP-1"
+
+# Define Preset Workspaces
+workspace "1-A" output $left-monitor
+workspace "1-B" output $center-monitor
+workspace "1-C" output $right-monitor
+
+workspace "2-A" output $left-monitor
+workspace "2-B" output $center-monitor
+workspace "2-C" output $right-monitor
+
+workspace "3-A" output $left-monitor
+workspace "3-B" output $center-monitor
+workspace "3-C" output $right-monitor
+
+workspace "4-A" output $left-monitor
+workspace "4-B" output $center-monitor
+workspace "4-C" output $right-monitor
+
+workspace "5-A" output $left-monitor
+workspace "5-B" output $center-monitor
+workspace "5-C" output $right-monitor
+
+workspace "6-A" output $left-monitor
+workspace "6-B" output $center-monitor
+workspace "6-C" output $right-monitor
+
+workspace "7-A" output $left-monitor
+workspace "7-B" output $center-monitor
+workspace "7-C" output $right-monitor
+
+workspace "8-A" output $left-monitor
+workspace "8-B" output $center-monitor
+workspace "8-C" output $right-monitor
+
+workspace "9-A" output $left-monitor
+workspace "9-B" output $center-monitor
+workspace "9-C" output $right-monitor
+
+workspace "0-A" output $left-monitor
+workspace "0-B" output $center-monitor
+workspace "0-C" output $right-monitor
+
+# Set keybinds for switching workspaces
+bindsym Mod4+1 workspace "1-A"; workspace "1-B"; workspace "1-C"
+bindsym Mod4+2 workspace "2-A"; workspace "2-B"; workspace "2-C"
+bindsym Mod4+3 workspace "3-A"; workspace "3-B"; workspace "3-C"
+bindsym Mod4+4 workspace "4-A"; workspace "4-B"; workspace "4-C"
+bindsym Mod4+5 workspace "5-A"; workspace "5-B"; workspace "5-C"
+bindsym Mod4+6 workspace "6-A"; workspace "6-B"; workspace "6-C"
+bindsym Mod4+7 workspace "7-A"; workspace "7-B"; workspace "7-C"
+bindsym Mod4+8 workspace "8-A"; workspace "8-B"; workspace "8-C"
+bindsym Mod4+9 workspace "9-A"; workspace "9-B"; workspace "9-C"
+bindsym Mod4+0 workspace "0-A"; workspace "0-B"; workspace "0-C"
+
+# move focused container to workspace
+bindsym Mod4+Shift+1 move container to workspace "1-B"
+bindsym Mod4+Shift+2 move container to workspace "2-B"
+bindsym Mod4+Shift+3 move container to workspace "3-B"
+bindsym Mod4+Shift+4 move container to workspace "4-B"
+bindsym Mod4+Shift+5 move container to workspace "5-B"
+bindsym Mod4+Shift+6 move container to workspace "6-B"
+bindsym Mod4+Shift+7 move container to workspace "7-B"
+bindsym Mod4+Shift+8 move container to workspace "8-B"
+bindsym Mod4+Shift+9 move container to workspace "9-B"
+bindsym Mod4+Shift+0 move container to workspace "10-B"
+
+
+## End Kurisu Configuration
