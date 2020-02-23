@@ -21,8 +21,10 @@ fi
 
 ## Check for directories referenced in the config. 
 ## If they don't exist, create them
-if [ ! -d ~/Pictures/screencaps ]; then
-	mkdir ~/Pictures/screencaps
+if [ -d ~/Pictures ]; then
+	if [ ! -d ~/Pictures/screencaps ]; then
+		mkdir ~/Pictures/screencaps
+	fi
 fi
 
 
