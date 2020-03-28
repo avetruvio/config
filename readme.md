@@ -2,10 +2,12 @@
 
 ## TL;DR
 
-1. `alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME '`
-2. `dotfiles clone --bare https://gitlab.com/k4tsh/dotfiles.git ~/.dotfiles`
-3. `dotfiles checkout`
-4. `dotfiles config --local status.showUntrackedFiles no`
+```
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME '
+dotfiles clone --bare https://gitlab.com/k4tsh/dotfiles.git ~/.dotfiles
+dotfiles checkout
+dotfiles config --local status.showUntrackedFiles no
+```
 
 After this, just use `dotfiles pull` to keep up to date. 
 
