@@ -1,0 +1,1 @@
+exec "i3-nagbar -m 'Program \"xscreensaver\" is not installed. Screensaver / Locking will not work' -t warning -b 'Install' 'i3-sensible-terminal -e sudo apt install xscreensaver xscreensaver-data xscreensaver-data-extra'"

@@ -8,15 +8,15 @@
 
 ## Rewrite the config and enter the main config
 
-cat $HOME/.i3/base.part > $HOME/.i3/config
+cat $HOME/.config/i3/base.part > $HOME/.config/i3/config
 
 if [ $(hostname) = kurisu ] ; then
-	cat $HOME/.i3/kurisu.part >> $HOME/.i3/config
+	cat $HOME/.config/i3/kurisu.part >> $HOME/.config/i3/config
 elif [ $(hostname) = salieri ] ; then
-	cat $HOME/.i3/salieri.part >> $HOME/.i3/config
-	cat $HOME/.i3/generic.part >> $HOME/.i3/config
+	cat $HOME/.config/i3/salieri.part >> $HOME/.config/i3/config
+	cat $HOME/.config/i3/generic.part >> $HOME/.config/i3/config
 else
-	cat $HOME/.i3/generic.part >> $HOME/.i3/config
+	cat $HOME/.config/i3/generic.part >> $HOME/.config/i3/config
 fi
 
 ## Check for directories referenced in the config. 
