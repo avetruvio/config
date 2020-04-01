@@ -25,3 +25,8 @@ if [ $XDG_CURRENT_DESKTOP == "i3" ]; then
 		~/.config/i3/i3-build.sh
 	fi
 fi
+
+# Autostart Dunst, if installed
+if [ -f /usr/bin/dunst ]; then
+	dunst
+fi

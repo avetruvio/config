@@ -3,10 +3,16 @@
 ## Heh...
 alias fucking='sudo'
 
+## Dotfiles Alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME '
 
-# Bypass alias only checking first word of command, i.e. only seeing 'sudo', by giving 'sudo' an alias
+## Bypass alias only checking first word of command, i.e. only seeing 'sudo', by giving 'sudo' an alias
 alias sudo='sudo '
+
+## Move ~/.tmux.conf to $XDG_CONFIG_HOME
+## Alias not needed? https://github.com/tmux/tmux/issues/142
+## Leaving this here for an easy fix if this is platform-specific
+## alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/config"'
 
 
 ## ls as we cd
@@ -28,12 +34,8 @@ alias su="sudo -E su -p"
 alias clock="tty-clock"
 alias timer="tty-countdown"
 
-## Change background using library in ~/Pictures
-if [ -d ~/Pictures/backgrounds/ ]; then
-	alias chbg="feh --bg-scale --no-xinerama `find Pictures/backgrounds/ -type f | shuf -n 1 --random-source=/dev/random `"
-fi
 
-# Check if session is SSH or not before reboot
+## TODO: Check if session is SSH or not before reboot
 function reboot {
 	echo null
 }
