@@ -14,7 +14,7 @@
 
 	fi
 
-	if [ $HOSTNAME == "salieri" ]; then
+	if [ $HOSTNAME == "salieri-manjaro" ]; then
 		# Export the correct Pulse Audio profile
 		export PULSE_SINK=alsa_output.pci-0000_00_1b.0.analog-stereo
 		export PULSE_SOURCE=alsa_input.pci-0000_00_1b.0.analog-stereo
