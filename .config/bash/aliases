@@ -45,3 +45,5 @@ function reboot {
 	echo null
 }
 
+## hist - history but limited with tail
+alias hist="history | tail -n 10"
