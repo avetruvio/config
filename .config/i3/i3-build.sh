@@ -10,9 +10,9 @@
 
 cat $HOME/.config/i3/base.part > $HOME/.config/i3/config
 
-if [ $(hostname) = kurisu ] ; then
+if [ $(hostname) = 'kurisu' ] ; then
 	cat $HOME/.config/i3/kurisu.part >> $HOME/.config/i3/config
-elif [ $(hostname) = salieri ] ; then
+elif [ $(hostname) = 'salieri-manjaro' ] ; then
 	cat $HOME/.config/i3/salieri.part >> $HOME/.config/i3/config
 	cat $HOME/.config/i3/generic.part >> $HOME/.config/i3/config
 else
