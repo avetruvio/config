@@ -31,8 +31,13 @@ alias open="xdg-open"
 alias su="sudo -E su -p"
 
 ## TTY Clock, Timer
-alias clock="tty-clock"
-alias timer="tty-countdown"
+if [ command -v tty-clock >/dev/null 2>&1 ]; then
+	alias clock="tty-clock"
+fi
+
+if [ command -v tty-countdown >/dev/null 2>&1 ]; then
+	alias timer="tty-countdown"
+fi
 
 
 ## TODO: Check if session is SSH or not before reboot
@@ -40,3 +45,5 @@ function reboot {
 	echo null
 }
 
+## hist - history but limited with tail
+alias hist="history | tail -n 10"

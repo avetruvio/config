@@ -5,22 +5,22 @@
 	# Wishlist: Add feature that escape, while pressed alone, behaves as escape, but in combination with other keys, behaves as the control key. 
 
 # If kurisu, the awesome main triple monitor machine~ 
-	if [ $HOSTNAME == "kurisu" ]; then
-		# Put monitors in the right order
-		xrandr --output DP-1 --left-of DP-5 --output DP-3 --right-of DP-5
+if [ $HOSTNAME == "kurisu" ]; then
+	# Put monitors in the right order
+	xrandr --output DP-1 --left-of DP-5 --output DP-3 --right-of DP-5
 
-		# Export the correct Pulse Audio profile
-		export PULSE_SINK=alsa_output.usb-BEHRINGER_UMC204HD_192k-00.analog-surround-40
+	# Export the correct Pulse Audio profile
+	export PULSE_SINK=alsa_output.usb-BEHRINGER_UMC204HD_192k-00.analog-surround-40
 
-	fi
+fi
 
-	if [ $HOSTNAME == "salieri-manjaro" ]; then
-		# Export the correct Pulse Audio profile
-		export PULSE_SINK=alsa_output.pci-0000_00_1b.0.analog-stereo
-		export PULSE_SOURCE=alsa_input.pci-0000_00_1b.0.analog-stereo
-	fi
+if [ $HOSTNAME == "salieri-manjaro" ]; then
+	# Export the correct Pulse Audio profile
+	export PULSE_SINK=alsa_output.pci-0000_00_1b.0.analog-stereo
+	export PULSE_SOURCE=alsa_input.pci-0000_00_1b.0.analog-stereo
+fi
 
-if [ $XDG_CURRENT_DESKTOP == "i3" ]; then
+if [ -f /usr/bin/i3 ]; then
 	if [ -f ~/.config/i3/i3-build.sh ]; then
 		~/.config/i3/i3-build.sh
 	fi
@@ -28,5 +28,5 @@ fi
 
 # Autostart Dunst, if installed
 if [ -f /usr/bin/dunst ]; then
-	dunst
+	dunst &
 fi

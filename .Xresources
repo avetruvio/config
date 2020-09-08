@@ -1,3 +1,27 @@
+*.alpha: 0.6
+*.font: monospace:size=10
+
+*.background: #1c2021
+*.foreground: #f4f5f7
+*.color0: #757c84
+*.color1: #c7ad94
+*.color2: #95c7ae
+*.color3: #adc995
+*.color4: #b095c8
+*.color5: #c795ae
+*.color6: #94aec7
+*.color7: #c7ccd2
+*.color8: #757c84
+*.color9: #c7ad94
+*.color10: #95c7ae
+*.color11: #adc995
+*.color12: #b095c8
+*.color13: #c795ae
+*.color14: #94aec7
+*.color15: #c7ccd2
+
+
+
 URxvt.font: xft:hack:size=12,xft:monospace:size=12,xft:noto:size=11,xft:FontAwesome:size=14,sft:siji:size=12
 URxvt.scrollBar: false
 URxvt.transparent:   true

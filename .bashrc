@@ -19,7 +19,8 @@ esac
 #  [ ! -f /tmp/panic -a -x /usr/bin/tmux ] && exec tmux
 #fi
 
-
+# HISTORY
+# Options for .bash_history
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -28,9 +29,22 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+#Force append after each command, not after session's done
+PROMPT_COMMAND="history -a; history -c; history -r;"
+
+## Trying to comment status exit code after command, not working too well. 
+##PROMPT_COMMAND="CODE=\$?; history -a; sed -i '\$s/\$/ \#\'$CODE/' $HISTFILE; history -r"
+
+# Ignore a few annoying commands: I
+export HISTIGNORE="ls:clear:exit"
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=10000
+
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+
+# END HISTORY
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -140,7 +154,7 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Force 256color for tmux
-alias tmux="tmux -2"
+alias tmux="tmux -2 -f ~/.config/tmux/config"
 
 
 # Alias definitions.
