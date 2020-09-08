@@ -177,3 +177,8 @@ function cd {
 
 
 set -o vi
+
+## Environment Variables
+
+## Termite terminfo
+export TERMINFO="$HOME/.config/terminfo/"
