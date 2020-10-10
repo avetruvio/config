@@ -1,0 +1,7 @@
+#!/bin/sh
+
+## Change background using library in ~/Pictures
+if [ -d ~/Pictures/backgrounds/ ]; then
+	feh --bg-scale --no-xinerama `find Pictures/backgrounds/ -type f | shuf -n 1 --random-source=/dev/random `
+fi
+
