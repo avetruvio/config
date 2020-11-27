@@ -41,6 +41,10 @@ exec --no-startup-id /usr/bin/compton --config ~/.config/i3/compton.cfg
 ## Start light-locker daemon
 exec --no-startup-id light-locker &
 
+## Autostart script for .desktop entries and symlinks within the ~/.config/autostart directory
+#
+exec --no-startup-id ~/.local/share/dotfiles/autostart.sh
+
 ############################
 ## bindsym printable keys ##
 ############################
