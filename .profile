@@ -18,8 +18,7 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-# fi
-#     PATH="$HOME/.local/bin:$PATH"
+#h PATH="$HOME/.local/bin:$PATH"
 
 # export XDG_CONFIG_HOME=$HOME/.config
 
@@ -34,3 +33,4 @@ rmd () {
 if [ -d "$HOME/.local/share/platform-tools" ] ; then
 	PATH="$HOME/.local/share/platform-tools:$PATH"
 fi
+#end
