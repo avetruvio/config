@@ -34,3 +34,4 @@ rmd () {
 if [ -d "$HOME/.local/share/platform-tools" ] ; then
 	PATH="$HOME/.local/share/platform-tools:$PATH"
 fi
+#end
