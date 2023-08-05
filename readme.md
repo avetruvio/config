@@ -4,7 +4,7 @@
 
 ```
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME '
-dotfiles clone --bare https://gitlab.com/katdotsh/dotfiles.git ~/.dotfiles
+dotfiles clone --bare https://github.com/avetruvio/config.git ~/.dotfiles
 dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
 ```
