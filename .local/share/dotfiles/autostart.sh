@@ -4,6 +4,9 @@
 ## Finds any "Exec" lines in any xdg-like *.desktop files or symlinks
 ## in ~/.config/autostart, and runs the value of those lines. 
 
-grep -h Exec ~/.config/autostart/* | while read -r line ; do
-	${line:5} &
+shopt -s nullglob
+for f in ~/.config/autostart/*.desktop; do
+	grep -h '^Exec=' "$f" | while read -r line; do
+		${line:5} &
+	done
 done

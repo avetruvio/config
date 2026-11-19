@@ -14,7 +14,7 @@ unbind %
 
 
 # reload config file (change file location to your the tmux.conf you want to use)
-bind r source-file ~/.tmux.conf
+bind r source-file ~/.config/tmux/config
 
 # switch panes using Alt-arrow without prefix
 bind -n M-Left select-pane -L
@@ -27,4 +27,4 @@ bind -n M-Down select-pane -D
 set -g status-bg magenta
 
 # if run as "tmux attach", create a session if one does not already exist
-new-session -n $HOST
+# new-session -n #H

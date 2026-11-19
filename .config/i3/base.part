@@ -39,7 +39,7 @@ exec --no-startup-id /usr/bin/compton --config ~/.config/i3/compton.cfg
 
 ## I found that light-locker as a wrapper for lightdm allows for locking the screen with the lightdm login screen without the ALT+F7 security flaw. Let's go with that. 
 ## Start light-locker daemon
-exec --no-startup-id light-locker &
+exec --no-startup-id light-locker
 
 ## Autostart script for .desktop entries and symlinks within the ~/.config/autostart directory
 #
@@ -211,9 +211,9 @@ bindsym Mod4+minus scratchpad show
 ## Using $PULSE_SINK, as set in ~/.xprofile
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $PULSE_SINK +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $PULSE_SINK -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $PULSE_SINK toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "${PULSE_SINK:-@DEFAULT_SINK@}" +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume "${PULSE_SINK:-@DEFAULT_SINK@}" -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute "${PULSE_SINK:-@DEFAULT_SINK@}" toggle # mute sound
 
 # Media player controls
 bindsym XF86AudioPause exec playerctl play-pause
@@ -232,5 +232,5 @@ bindsym Mod4+Return exec i3-sensible-terminal
 
 # Screenshots with PrntScrn
 # Requires ImageMagick
-bindsym Print --release exec "import ~/Pictures/screencaps/Screenshot_`date '+%Y-%m-%d_%H-%M-%S'`.png && xclip -selection clipboard -t image/png -i `ls -t -w 1 ~/Pictures/screencaps/ | head -n1`"
-bindsym Print+Shift exec "import -window root ~/Pictures/screencaps/Screenshot_`date '+%Y-%m-%d_%H-%M-%S'`.png && xclip -selection clipboard -t image/png -i `ls -t -w 1 ~/Pictures/screencaps/ | head -n1`"
+bindsym Print --release exec --no-startup-id sh -c 'f=~/Pictures/screencaps/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png; import "$f" && xclip -selection clipboard -t image/png -i "$f"'
+bindsym Shift+Print exec --no-startup-id sh -c 'f=~/Pictures/screencaps/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png; import -window root "$f" && xclip -selection clipboard -t image/png -i "$f"'

@@ -18,15 +18,17 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-#h PATH="$HOME/.local/bin:$PATH"
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
-# export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 
 # Little function for rendering .md files using a trick
 # Requires installation of pandoc and w3m
 # Uses pandoc to transpose markdown into html, uses w3m to render said html piped as stdin
 rmd () {
-	pandoc $1 | w3m -T text/html
+	pandoc "$1" | w3m -T text/html
 }
 
 # Android SDK Platform Tools

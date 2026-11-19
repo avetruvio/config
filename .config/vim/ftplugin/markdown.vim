@@ -43,10 +43,10 @@ endif
 " vim:set sw=2:
 
 " Custom Rules
-:set syntax=markdown
-:set wrap linebreak nolist
-:set spell spelllang=en_us
-:set showbreak=↪
-:set nonumber
-:highlight NonText ctermfg=black
+setlocal syntax=markdown
+setlocal wrap linebreak nolist
+setlocal spell spelllang=en_us
+setlocal showbreak=↪
+setlocal nonumber
+highlight NonText ctermfg=black
 

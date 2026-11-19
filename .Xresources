@@ -22,7 +22,7 @@
 
 
 
-URxvt.font: xft:hack:size=12,xft:monospace:size=12,xft:noto:size=11,xft:FontAwesome:size=14,sft:siji:size=12
+URxvt.font: xft:hack:size=12,xft:monospace:size=12,xft:noto:size=11,xft:FontAwesome:size=14,xft:siji:size=12
 URxvt.scrollBar: false
 URxvt.transparent:   true
 URxvt.shading:	20
@@ -47,4 +47,4 @@ URxvt*color14: #94aec7
 URxvt*color15: #c7ccd2
 
 ! Dissable printing the terminal contents when pressing PrintScreen
-URxvt.print.pipe: "cat > /dev/null"
+URxvt.print-pipe: cat > /dev/null

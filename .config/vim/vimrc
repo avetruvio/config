@@ -25,6 +25,13 @@ set ruler
 filetype plugin on
 syntax on
 
+if empty($XDG_DATA_HOME)
+  let $XDG_DATA_HOME = $HOME . '/.local/share'
+endif
+if empty($XDG_CONFIG_HOME)
+  let $XDG_CONFIG_HOME = $HOME . '/.config'
+endif
+
 set undodir=$XDG_DATA_HOME/vim/undo
 set directory=$XDG_DATA_HOME/vim/swap
 set backupdir=$XDG_DATA_HOME/vim/backup

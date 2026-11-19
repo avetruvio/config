@@ -133,7 +133,7 @@ fi
 
 # Custom colors for LS
 # https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console
-LS_COLORS=$LS_COLORS:'di=0;34:'; export LS_COLORS
+LS_COLORS="${LS_COLORS:+$LS_COLORS:}di=0;34:"; export LS_COLORS
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;33:locus=01:quote=01'
@@ -185,14 +185,9 @@ if [[ -n "$TMUX" ]]; then
 	fi
 fi
 
-function cd { 
-	builtin cd "$@" && ls -F
-}
-
-
 set -o vi
 
 ## Environment Variables
 
 ## Termite terminfo
-export TERMINFO="$HOME/.config/terminfo/"
+export TERMINFO_DIRS="$HOME/.config/terminfo:/usr/share/terminfo"
