@@ -29,8 +29,8 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-#Force append after each command, not after session's done
-PROMPT_COMMAND="history -a; history -c; history -r;"
+# Append new commands to history after each prompt without reloading/interleaving across sessions
+PROMPT_COMMAND="history -a"
 
 ## Trying to comment status exit code after command, not working too well. 
 ##PROMPT_COMMAND="CODE=\$?; history -a; sed -i '\$s/\$/ \#\'$CODE/' $HISTFILE; history -r"
@@ -145,7 +145,7 @@ alias la='ls -A'
 alias l='ls'
 
 # If full vim installed, use that instead of vi
-if [ -f /usr/bin/vim ]; then
+if command -v vim >/dev/null 2>&1; then
     alias vi='vim'
 fi
 

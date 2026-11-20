@@ -29,13 +29,12 @@ bar {
 }
 
 ## Set Background
-## Look for a .background.* in home directory, .background.jpg or .background.png etc
-## | head -n1 to limit multiple searches to first one
-exec --no-startup-id feh --bg-fill `ls -t -w 1 ~/.background.* | head -n1`
+## Look for ~/.background.* first; fall back to chbg (~/Pictures/backgrounds/) if absent
+exec --no-startup-id sh -c 'bg=$(ls -t -w 1 ~/.background.* 2>/dev/null | head -n1); if [ -n "$bg" ]; then feh --bg-fill "$bg"; else command -v chbg >/dev/null 2>&1 && chbg; fi'
 
 ## Enable Window Transparency to Background
 #exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-exec --no-startup-id /usr/bin/compton --config ~/.config/i3/compton.cfg
+exec --no-startup-id compton --config ~/.config/i3/compton.cfg
 
 ## I found that light-locker as a wrapper for lightdm allows for locking the screen with the lightdm login screen without the ALT+F7 security flaw. Let's go with that. 
 ## Start light-locker daemon
@@ -208,7 +207,7 @@ bindsym Mod4+minus scratchpad show
 ##########################
 
 ## Set Media Key Stuff
-## Using $PULSE_SINK, as set in ~/.xprofile
+## Uses $PULSE_SINK if set, otherwise @DEFAULT_SINK@
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "${PULSE_SINK:-@DEFAULT_SINK@}" +5% #increase sound volume

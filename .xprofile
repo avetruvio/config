@@ -1,16 +1,18 @@
 #!/bin/bash
 
 # Swap Caps Lock and Escape around
-	/usr/bin/setxkbmap -option "caps:swapescape"
-	# Wishlist: Add feature that escape, while pressed alone, behaves as escape, but in combination with other keys, behaves as the control key. 
+if command -v setxkbmap >/dev/null 2>&1; then
+	setxkbmap -option "caps:swapescape"
+	# Wishlist: Add feature that escape, while pressed alone, behaves as escape, but in combination with other keys, behaves as the control key.
+fi
 
-if [ -f /usr/bin/i3 ]; then
+if command -v i3 >/dev/null 2>&1; then
 	if [ -f ~/.config/i3/i3-build.sh ]; then
 		~/.config/i3/i3-build.sh
 	fi
 fi
 
 # Autostart Dunst, if installed
-if [ -f /usr/bin/dunst ]; then
+if command -v dunst >/dev/null 2>&1; then
 	dunst &
 fi

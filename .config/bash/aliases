@@ -47,3 +47,8 @@ fi
 
 ## hist - history but limited with tail
 alias hist="history | tail -n 10"
+
+## Render Markdown in terminal using pandoc and w3m
+rmd () {
+	pandoc "$1" | w3m -T text/html
+}

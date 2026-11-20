@@ -8,6 +8,20 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Android SDK Platform Tools
+if [ -d "$HOME/.local/share/platform-tools" ] ; then
+    PATH="$HOME/.local/share/platform-tools:$PATH"
+fi
+
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -15,24 +29,3 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-
-# Little function for rendering .md files using a trick
-# Requires installation of pandoc and w3m
-# Uses pandoc to transpose markdown into html, uses w3m to render said html piped as stdin
-rmd () {
-	pandoc "$1" | w3m -T text/html
-}
-
-# Android SDK Platform Tools
-if [ -d "$HOME/.local/share/platform-tools" ] ; then
-	PATH="$HOME/.local/share/platform-tools:$PATH"
-fi
-#end

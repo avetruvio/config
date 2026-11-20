@@ -37,9 +37,9 @@ rm ~/readme.md
 
 | File | Purpose |
 | :--- | :--- |
-| `.profile` | Login shell environment: adds `~/.local/bin` and Android `platform-tools` to `PATH`, sets `XDG_CONFIG_HOME` / `XDG_DATA_HOME` defaults, defines `rmd()`, and sources `.bashrc`. |
+| `.profile` | Login shell environment: adds `~/.local/bin` and Android `platform-tools` to `PATH`, sets `XDG_CONFIG_HOME` / `XDG_DATA_HOME` / `VIMINIT`, and sources `.bashrc`. |
 | `.bashrc` | Interactive Bash setup: history settings, `parse_git_branch` colored prompt, `dircolors`/`LS_COLORS`, `vi` editing mode (`set -o vi`), `TERMINFO_DIRS`, and sourcing of `~/.config/bash/aliases`. |
-| `.config/bash/aliases` | Custom aliases and functions (`dotfiles`, `cd` with `ls -F`, `hist`, `open`, `clock`, `timer`, etc.). |
+| `.config/bash/aliases` | Custom aliases and functions (`dotfiles`, `cd` with `ls -F`, `hist`, `open`, `rmd`, `clock`, `timer`, etc.). |
 | `.xprofile` | X11 session startup: swaps Caps Lock and Escape (`setxkbmap`), runs `i3-build.sh` if `i3` is installed, and starts `dunst`. |
 | `.Xresources` | X11 terminal colors, alpha/transparency, `URxvt` font stack, and `PrintScreen` print-pipe disable. |
 
@@ -71,7 +71,7 @@ rm ~/readme.md
 | :--- | :--- |
 | `.local/bin/chbg` | Picks a random wallpaper from `~/Pictures/backgrounds/` and sets it via `feh`. |
 | `.local/bin/dmenuunicode` | Prompts for an emoji from `~/.local/share/dotfiles/emoji` via `dmenu` and types it (`xdotool`) or copies it to the clipboard (`xclip`). |
-| `.local/share/dotfiles/autostart.sh` | Parses `^Exec=` lines from `~/.config/autostart/*.desktop` and launches them in the background. |
+| `.local/share/dotfiles/autostart.sh` | Parses `[Desktop Entry]` `Exec=` lines from `~/.config/autostart/*.desktop`, strips field codes, and launches them in the background. |
 | `.local/share/dotfiles/emoji` | Emoji lookup table used by `dmenuunicode`. |
 
 ---

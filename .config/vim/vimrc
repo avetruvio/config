@@ -1,3 +1,4 @@
+set nocompatible
 
 " Set Indentation Rules
 
@@ -31,6 +32,12 @@ endif
 if empty($XDG_CONFIG_HOME)
   let $XDG_CONFIG_HOME = $HOME . '/.config'
 endif
+
+for s:vim_dir in [$XDG_DATA_HOME . '/vim/undo', $XDG_DATA_HOME . '/vim/swap', $XDG_DATA_HOME . '/vim/backup']
+  if !isdirectory(s:vim_dir)
+    call mkdir(s:vim_dir, 'p', 0700)
+  endif
+endfor
 
 set undodir=$XDG_DATA_HOME/vim/undo
 set directory=$XDG_DATA_HOME/vim/swap
