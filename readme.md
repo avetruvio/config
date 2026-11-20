@@ -4,7 +4,15 @@ Personal Linux dotfiles managed with a bare Git repository.
 
 ## Installation
 
-### Quick Start
+### Automated Install
+
+Run `install.sh` to clone the bare repo, back up existing `~/.bashrc`, `~/.profile`, and any conflicting files to `~/.dotfiles-backup`, and check out the dotfiles into `$HOME` (pass `-f` to delete conflicts instead of backing them up):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/avetruvio/config/master/install.sh | bash
+```
+
+### Manual Quick Start
 
 ```bash
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME '
